@@ -5,13 +5,13 @@
            xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
     <parameters>
-        <parameter key="topics.controller.thread.class">Topics\Controller\ThreadController</parameter>
+        <parameter key="topycs.controller.thread.class">Topycs\Controller\ThreadController</parameter>
     </parameters>
 
     <services>
-        <service id="topics.controller.thread" class="%topics.controller.thread.class%">
+        <service id="topycs.controller.thread" class="%topycs.controller.thread.class%">
             <argument type="service" id="templating" />
-            <argument type="service" id="topics.repository.thread" />
+            <argument type="service" id="topycs.repository.thread" />
         </service>
     </services>
     

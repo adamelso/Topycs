@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the discussion-Topics package.
+ * This file is part of the discussion-Topycs package.
  *
  * (c) Daniel Ribeiro <drgomesp@gmail.com>
  *
@@ -9,13 +9,13 @@
  * file that was distributed with this source code.
  */
  
-namespace Topics\Entity;
+namespace Topycs\Entity;
 
 /**
  * Defines a Category.
  *
  * @author Daniel Ribeiro <drgomesp@gmail.com>
- * @package Topics\Entity
+ * @package Topycs\Entity
  */
 interface CategoryInterface
 {

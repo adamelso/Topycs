@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the discussion-Topics package.
+ * This file is part of the discussion-Topycs package.
  *
  * (c) Daniel Ribeiro <drgomesp@gmail.com>
  *
@@ -12,15 +12,15 @@
 namespace Topycs\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Topics\Entity\Collection\PostCollection;
+use Topycs\Entity\Collection\PostCollection;
 
 /**
  * A basic thread, which is basically a set of posts with a head post and a title.
  *
  * @author Daniel Ribeiro <drgomesp@gmail.com>
- * @package Topics\Entity
+ * @package Topycs\Entity
  * 
- * @ORM\Entity(repositoryClass="\Topics\Repository\ThreadRepository")
+ * @ORM\Entity(repositoryClass="\Topycs\Repository\ThreadRepository")
  * @ORM\Table(name="threads")
  */
 class Thread implements ThreadInterface
@@ -42,9 +42,9 @@ class Thread implements ThreadInterface
     protected $title;
 
     /**
-     * @var \Topics\Entity\Collection\PostCollection
+     * @var \Topycs\Entity\Collection\PostCollection
      * 
-     * @ORM\OneToMany(targetEntity="\Topics\Entity\Post", mappedBy="thread")
+     * @ORM\OneToMany(targetEntity="\Topycs\Entity\Post", mappedBy="thread")
      */
     protected $posts;
 

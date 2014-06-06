@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the discussion-Topics package.
+ * This file is part of the discussion-Topycs package.
  *
  * (c) Daniel Ribeiro <drgomesp@gmail.com>
  *
@@ -9,17 +9,17 @@
  * file that was distributed with this source code.
  */
  
-namespace Topics\Controller;
+namespace Topycs\Controller;
 
 use Doctrine\Common\Persistence\ObjectRepository;
-use Topics\Repository\ThreadRepository;
+use Topycs\Repository\ThreadRepository;
 use Symfony\Bundle\FrameworkBundle\Templating\EngineInterface;
 
 /**
  * Class ThreadController
  *
  * @author Daniel Ribeiro <drgomesp@gmail.com>
- * @package Topics\Controller
+ * @package Topycs\Controller
  */
 final class ThreadController
 {
@@ -29,13 +29,13 @@ final class ThreadController
     protected $templating;
 
     /**
-     * @var \Topics\Repository\ThreadRepository
+     * @var \Topycs\Repository\ThreadRepository
      */
     protected $threadRepository;
 
     /**
      * @param \Symfony\Bundle\FrameworkBundle\Templating\EngineInterface $templating
-     * @param \Topics\Repository\ThreadRepository $threadRepository
+     * @param \Topycs\Repository\ThreadRepository $threadRepository
      */
     public function __construct(EngineInterface $templating, ThreadRepository $threadRepository)
     {

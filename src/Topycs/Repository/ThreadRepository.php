@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the discussion-Topics package.
+ * This file is part of the discussion-Topycs package.
  *
  * (c) Daniel Ribeiro <drgomesp@gmail.com>
  *
@@ -9,16 +9,16 @@
  * file that was distributed with this source code.
  */
  
-namespace Topics\Repository;
+namespace Topycs\Repository;
 
 use Doctrine\ORM\EntityRepository;
-use Topics\Entity\CategoryInterface;
+use Topycs\Entity\CategoryInterface;
 
 /**
  * Class ThreadRepository
  *
  * @author Daniel Ribeiro <drgomesp@gmail.com>
- * @package Topics\Repository
+ * @package Topycs\Repository
  */
 class ThreadRepository extends EntityRepository
 {
@@ -37,7 +37,7 @@ class ThreadRepository extends EntityRepository
     }
 
     /**
-     * @param \Topics\Entity\CategoryInterface $category
+     * @param \Topycs\Entity\CategoryInterface $category
      * @return \Doctrine\Common\Collections\Collection
      */
     public function findByCategory(CategoryInterface $category = null)

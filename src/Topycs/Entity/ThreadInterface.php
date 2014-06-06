@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the discussion-Topics package.
+ * This file is part of the discussion-Topycs package.
  *
  * (c) Daniel Ribeiro <drgomesp@gmail.com>
  *
@@ -9,15 +9,15 @@
  * file that was distributed with this source code.
  */
  
-namespace Topics\Entity;
+namespace Topycs\Entity;
 
-use Topics\Entity\Collection\PostCollection;
+use Topycs\Entity\Collection\PostCollection;
 
 /**
  * Defines a Thread.
  *
  * @author Daniel Ribeiro <drgomesp@gmail.com>
- * @package Topics\Entity
+ * @package Topycs\Entity
  */
 interface ThreadInterface
 {
@@ -38,17 +38,17 @@ interface ThreadInterface
     public function setTitle($title);
     
     /**
-     * @return \Topics\Entity\Collection\PostCollection
+     * @return \Topycs\Entity\Collection\PostCollection
      */
     public function getPosts();
 
     /**
-     * @param \Topics\Entity\Collection\PostCollection $posts
+     * @param \Topycs\Entity\Collection\PostCollection $posts
      */
     public function setPosts(PostCollection $posts = null);
 
     /**
-     * @param \Topics\Entity\PostInterface $post
+     * @param \Topycs\Entity\PostInterface $post
      */
     public function addPost(PostInterface $post);
     
@@ -73,7 +73,7 @@ interface ThreadInterface
     public function setUpdatedAt(\DateTime $updatedAt = null);
     
     /**
-     * @return \Topics\Entity\PostInterface
+     * @return \Topycs\Entity\PostInterface
      */
     public function getHeadPost();
 

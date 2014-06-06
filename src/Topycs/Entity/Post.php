@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the discussion-Topics package.
+ * This file is part of the discussion-Topycs package.
  *
  * (c) Daniel Ribeiro <drgomesp@gmail.com>
  *
@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
  
-namespace Topics\Entity;
+namespace Topycs\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -17,7 +17,7 @@ use Doctrine\ORM\Mapping as ORM;
  * A basic post, which has an author and some content.
  *
  * @author Daniel Ribeiro <drgomesp@gmail.com>
- * @package Topics\Entity
+ * @package Topycs\Entity
  *
  * @ORM\Entity
  * @ORM\Table(name="posts")
@@ -34,14 +34,14 @@ class Post implements PostInterface
     protected $id;
 
     /**
-     * @var \Topics\Entity\ThreadInterface
+     * @var \Topycs\Entity\ThreadInterface
      * 
-     * @ORM\ManyToOne(targetEntity="\Topics\Entity\Thread")
+     * @ORM\ManyToOne(targetEntity="\Topycs\Entity\Thread")
      */
     protected $thread;
     
     /**
-     * @var \Topics\Entity\UserInterface
+     * @var \Topycs\Entity\UserInterface
      */
     protected $author;
 
@@ -75,7 +75,7 @@ class Post implements PostInterface
     }
 
     /**
-     * @return \Topics\Entity\UserInterface
+     * @return \Topycs\Entity\UserInterface
      */
     public function getAuthor()
     {
@@ -83,7 +83,7 @@ class Post implements PostInterface
     }
 
     /**
-     * @param \Topics\Entity\UserInterface $author
+     * @param \Topycs\Entity\UserInterface $author
      */
     public function setAuthor(UserInterface $author)
     {
@@ -145,7 +145,7 @@ class Post implements PostInterface
     }
 
     /**
-     * @return \Topics\Entity\ThreadInterface
+     * @return \Topycs\Entity\ThreadInterface
      */
     public function getThread()
     {
@@ -153,7 +153,7 @@ class Post implements PostInterface
     }
 
     /**
-     * @param \Topics\Entity\ThreadInterface $thread
+     * @param \Topycs\Entity\ThreadInterface $thread
      */
     public function setThread(ThreadInterface $thread)
     {

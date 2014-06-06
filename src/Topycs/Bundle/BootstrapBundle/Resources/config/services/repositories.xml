@@ -5,16 +5,16 @@
            xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
     <parameters>
-        <parameter key="topics.entity.thread.class">Topics\Entity\Thread</parameter>
-        <parameter key="topics.repository.thread.class">Doctrine\ORM\EntityRepository</parameter>
+        <parameter key="topycs.entity.thread.class">Topycs\Entity\Thread</parameter>
+        <parameter key="topycs.repository.thread.class">Doctrine\ORM\EntityRepository</parameter>
     </parameters>
 
     <services>
-        <service id="topics.repository.thread"
-             class="%topics.repository.thread.class%"
+        <service id="topycs.repository.thread"
+             class="%topycs.repository.thread.class%"
              factory-service="doctrine.orm.entity_manager"
              factory-method="getRepository">
-            <argument type="string">%topics.entity.thread.class%</argument>
+            <argument type="string">%topycs.entity.thread.class%</argument>
          </service>
     </services>
 

@@ -61,8 +61,8 @@ doctrine:
         mappings:
             model:
                 type: annotation
-                dir: "%kernel.root_dir%/../src/Topics/Entity"
-                prefix: Topics\Entity
+                dir: "%kernel.root_dir%/../src/Topycs/Entity"
+                prefix: Topycs\Entity
                 alias: Entity
                 is_bundle: false
 

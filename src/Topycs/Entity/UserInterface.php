@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the discussion-Topics package.
+ * This file is part of the discussion-Topycs package.
  *
  * (c) Daniel Ribeiro <drgomesp@gmail.com>
  *
@@ -9,16 +9,16 @@
  * file that was distributed with this source code.
  */
  
-namespace Topics\Entity;
+namespace Topycs\Entity;
 
-use Topics\Entity\Collection\PostCollection;
-use Topics\Entity\Collection\ThreadCollection;
+use Topycs\Entity\Collection\PostCollection;
+use Topycs\Entity\Collection\ThreadCollection;
 
 /**
  * Defines a User.
  *
  * @author Daniel Ribeiro <drgomesp@gmail.com>
- * @package Topics\Entity
+ * @package Topycs\Entity
  */
 interface UserInterface
 {
@@ -38,32 +38,32 @@ interface UserInterface
     public function setEmail($email);
     
     /**
-     * @return \Topics\Entity\Collection\ThreadCollection
+     * @return \Topycs\Entity\Collection\ThreadCollection
      */
     public function getThreads();
 
     /**
-     * @param \Topics\Entity\Collection\ThreadCollection $threads
+     * @param \Topycs\Entity\Collection\ThreadCollection $threads
      */
     public function setThreads(ThreadCollection $threads);
 
     /**
-     * @param \Topics\Entity\ThreadInterface $thread
+     * @param \Topycs\Entity\ThreadInterface $thread
      */
     public function addThread(ThreadInterface $thread);
 
     /**
-     * @return \Topics\Entity\Collection\PostCollection
+     * @return \Topycs\Entity\Collection\PostCollection
      */
     public function getPosts();
 
     /**
-     * @param \Topics\Entity\Collection\PostCollection $posts
+     * @param \Topycs\Entity\Collection\PostCollection $posts
      */
     public function setPosts(PostCollection $posts);
 
     /**
-     * @param \Topics\Entity\PostInterface $post
+     * @param \Topycs\Entity\PostInterface $post
      */
     public function addPost(PostInterface $post);
 

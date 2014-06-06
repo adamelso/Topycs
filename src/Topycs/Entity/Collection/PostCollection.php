@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the discussion-Topics package.
+ * This file is part of the discussion-Topycs package.
  *
  * (c) Daniel Ribeiro <drgomesp@gmail.com>
  *
@@ -9,26 +9,26 @@
  * file that was distributed with this source code.
  */
  
-namespace Topics\Entity\Collection;
+namespace Topycs\Entity\Collection;
 
-use Topics\Entity\ThreadInterface;
+use Topycs\Entity\PostInterface;
 
 /**
- * A collection of Thread.
+ * A collection of Post.
  *
  * @author Daniel Ribeiro <drgomesp@gmail.com>
- * @package Topics\Entity\Collection
+ * @package Topycs\Entity\Collection
  */
-class ThreadCollection extends \ArrayObject
+class PostCollection extends \ArrayObject
 {
     /**
      * {@inheritdoc}
      */
     public function append($value)
     {
-        if (!$value instanceof ThreadInterface) {
+        if (!$value instanceof PostInterface) {
             throw new \InvalidArgumentException(
-                sprintf('Expected \Topics\Entity\ThreadInterface, got %s.', get_class($value))
+                sprintf('Expected \Topycs\Entity\PostInterface, got %s.', get_class($value))
             );
         }
     }

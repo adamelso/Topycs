@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the discussion-Topics package.
+ * This file is part of the discussion-Topycs package.
  *
  * (c) Daniel Ribeiro <drgomesp@gmail.com>
  *
@@ -9,13 +9,13 @@
  * file that was distributed with this source code.
  */
  
-namespace Topics\Entity;
+namespace Topycs\Entity;
 
 /**
  * Defines a Post.
  *
  * @author Daniel Ribeiro <drgomesp@gmail.com>
- * @package Topics\Entity
+ * @package Topycs\Entity
  */
 interface PostInterface
 {
@@ -25,12 +25,12 @@ interface PostInterface
     public function getId();
 
     /**
-     * @return \Topics\Entity\UserInterface
+     * @return \Topycs\Entity\UserInterface
      */
     public function getAuthor();
 
     /**
-     * @param \Topics\Entity\UserInterface $author
+     * @param \Topycs\Entity\UserInterface $author
      */
     public function setAuthor(UserInterface $author);
 
@@ -66,12 +66,12 @@ interface PostInterface
     public function setContent($content);
 
     /**
-     * @return \Topics\Entity\ThreadInterface
+     * @return \Topycs\Entity\ThreadInterface
      */
     public function getThread();
 
     /**
-     * @param \Topics\Entity\ThreadInterface $thread
+     * @param \Topycs\Entity\ThreadInterface $thread
      */
     public function setThread(ThreadInterface $thread);
 }
