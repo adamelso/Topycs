@@ -25,7 +25,12 @@
     },
     "require-dev": {
         "behat/behat": "~3.0.6",
-        "phpspec/phpspec": "~2.0.0"
+        "phpspec/phpspec": "~2.0.0",
+        "behat/mink-goutte-driver": "*@dev",
+        "behat/symfony2-extension": "*@dev",
+        "behat/mink-extension": "*@dev",
+        "behat/mink-browserkit-driver": "*@dev",
+        "knplabs/friendly-contexts": "dev-master@dev"
     },
     "scripts": {
         "post-install-cmd": [
