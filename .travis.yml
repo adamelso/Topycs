@@ -7,6 +7,9 @@ services:
     - rabbitmq
 
 before_script:
+    - composer self-update
+    - travis_retry composer install --dev --prefer-dist
+
     - chmod -R 777 app/cache app/logs
 
 script:
