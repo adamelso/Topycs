@@ -1,0 +1,13 @@
+<div class="threads">
+    {% for thread in threads %}
+        <div class="thread">
+            <div class="title">
+                <h3>{{ thread.title }}</h3>
+            </div>
+            <div class="info">
+                <span class="posts">{{ thread.posts|length }} {{ 'thread.posts'|trans }}</span>
+                <span class="views">0 {{ 'thread.views'|trans }}</span>
+            </div>
+        </div>
+    {% endfor %}
+</div>

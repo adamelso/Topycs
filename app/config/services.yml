@@ -1,0 +1,2 @@
+imports:
+    - { resource: "@Platform/Resources/config/services.xml" }

@@ -1,0 +1,3 @@
+platform_bootstrap:
+    resource: "@TopicsBootstrapBundle/Resources/config/routing.xml"
+    prefix:   /
