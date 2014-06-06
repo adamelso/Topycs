@@ -11,4 +11,9 @@ class ThreadCollectionSpec extends ObjectBehavior
     {
         $this->shouldHaveType('Topycs\Entity\Collection\ThreadCollection');
     }
+
+    function it_validates_item_type_on_append(\stdClass $item)
+    {
+        $this->shouldThrow('\InvalidArgumentException')->duringAppend($item);
+    }
 }

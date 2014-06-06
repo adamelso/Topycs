@@ -11,4 +11,9 @@ class PostCollectionSpec extends ObjectBehavior
     {
         $this->shouldHaveType('Topycs\Entity\Collection\PostCollection');
     }
+    
+    function it_validates_item_type_on_append(\stdClass $item)
+    {
+        $this->shouldThrow('\InvalidArgumentException')->duringAppend($item);
+    }
 }
