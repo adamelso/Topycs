@@ -2,10 +2,6 @@ language: php
 
 php:      5.4
 
-services:
-    - mongodb
-    - rabbitmq
-
 before_script:
     - composer self-update
     - travis_retry composer install --dev --prefer-dist
@@ -13,6 +9,5 @@ before_script:
     - chmod -R 777 app/cache app/logs
 
 script:
-    - bin/check-cs
     - bin/phpspec run -fpretty --verbose
     - bin/behat --no-snippets --verbose --tags="~openvz"
