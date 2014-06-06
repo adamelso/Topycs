@@ -1,8 +1,8 @@
 {
-    "name": "symfony/framework-standard-edition",
+    "name": "topycs/topycs",
     "license": "MIT",
     "type": "project",
-    "description": "The \"Symfony Standard Edition\" distribution",
+    "description": "Modern discussion platform for PHP, proudly built with Symfony2",
     "autoload": {
         "psr-0": { "": "src/" }
     },
@@ -22,6 +22,10 @@
         "stof/doctrine-extensions-bundle": "~1.1",
         "runmybusiness/initialcon": "0.1.0",
         "erusev/parsedown": "1.0.1"
+    },
+    "require-dev": {
+        "behat/behat": "~3.0.6",
+        "phpspec/phpspec": "~2.0.0"
     },
     "scripts": {
         "post-install-cmd": [
