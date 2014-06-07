@@ -11,6 +11,7 @@
  
 namespace Topycs\Entity;
 
+use Doctrine\ORM\Mapping as ORM;
 use FOS\UserBundle\Model\User as BaseUser;
 use Topycs\Entity\Collection\PostCollection;
 use Topycs\Entity\Collection\ThreadCollection;
@@ -20,91 +21,126 @@ use Topycs\Entity\Collection\ThreadCollection;
  *
  * @author Daniel Ribeiro <drgomesp@gmail.com>
  * @package Topycs\Entity
+ *
+ * @ORM\Entity(repositoryClass="\Topycs\Repository\UserRepository")
+ * @ORM\Table(name="users")
  */
 class User extends BaseUser implements UserInterface
 {
     /**
-     * @var
+     * @var int
+     *
+     * @ORM\Id
+     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    protected $id;
+    
+    /**
+     * @var \Topycs\Entity\Collection\PostCollection
+     *
+     * @ORM\OneToMany(targetEntity="\Topycs\Entity\Post", mappedBy="thread")
+     */
+    protected $posts;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(type="datetime", name="created_at")
+     */
+    protected $createdAt;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(type="datetime", name="updated_at")
+     */
+    protected $updatedAt;
+    
+    /**
+     * @var \Topycs\Entity\Collection\ThreadCollection
+     * 
+     * @ORM\OneToMany(targetEntity="\Topycs\Entity\Thread", mappedBy="author")
      */
     protected $threads;
     
     /**
-     * @return \Topycs\Entity\Collection\ThreadCollection
+     * {@inheritdoc}
      */
     public function getThreads()
     {
-        // TODO: Implement getThreads() method.
+        return $this->threads;
     }
 
     /**
-     * @param \Topycs\Entity\Collection\ThreadCollection $threads
+     * {@inheritdoc}
      */
     public function setThreads(ThreadCollection $threads)
     {
-        // TODO: Implement setThreads() method.
+        $this->threads = $threads;
     }
 
     /**
-     * @param \Topycs\Entity\ThreadInterface $thread
+     * {@inheritdoc}
      */
     public function addThread(ThreadInterface $thread)
     {
-        // TODO: Implement addThread() method.
+        $this->threads->add($thread);
     }
 
     /**
-     * @return \Topycs\Entity\Collection\PostCollection
+     * {@inheritdoc}
      */
     public function getPosts()
     {
-        // TODO: Implement getPosts() method.
+        return $this->posts;
     }
 
     /**
-     * @param \Topycs\Entity\Collection\PostCollection $posts
+     * {@inheritdoc}
      */
     public function setPosts(PostCollection $posts)
     {
-        // TODO: Implement setPosts() method.
+        $this->posts = $posts;
     }
 
     /**
-     * @param \Topycs\Entity\PostInterface $post
+     * {@inheritdoc}
      */
     public function addPost(PostInterface $post)
     {
-        // TODO: Implement addPost() method.
+        $this->posts->add($post);
     }
 
     /**
-     * @return \DateTime
+     * {@inheritdoc}
      */
     public function getCreatedAt()
     {
-        // TODO: Implement getCreatedAt() method.
+        return $this->createdAt;
     }
 
     /**
-     * @param \DateTime $createdAt
+     * {@inheritdoc}
      */
     public function setCreatedAt(\DateTime $createdAt)
     {
-        // TODO: Implement setCreatedAt() method.
+        $this->createdAt = $createdAt;
     }
 
     /**
-     * @return \DateTime
+     * {@inheritdoc}
      */
     public function getUpdatedAt()
     {
-        // TODO: Implement getUpdatedAt() method.
+        return $this->updatedAt;
     }
 
     /**
-     * @param \DateTime $updatedAt
+     * {@inheritdoc}
      */
     public function setUpdatedAt($updatedAt = null)
     {
-        // TODO: Implement setUpdatedAt() method.
+        $this->updatedAt = $updatedAt;
     }
 }

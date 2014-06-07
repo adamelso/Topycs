@@ -69,6 +69,14 @@ class Thread implements ThreadInterface
      */
     protected $isPinned;
 
+    /**
+     * @var \Topycs\Entity\UserInterface
+     *
+     * @ORM\ManyToOne(targetEntity="\Topycs\Entity\User")
+     * @ORM\JoinColumn(name="author_id", referencedColumnName="id", nullable=false)
+     */
+    protected $author;
+
     public function __construct()
     {
         $this->posts = new PostCollection();
@@ -188,5 +196,21 @@ class Thread implements ThreadInterface
     public function setUpdatedAt(\DateTime $updatedAt = null)
     {
         $this->updatedAt = $updatedAt;
+    }
+
+    /**
+     * @return \Topycs\Entity\UserInterface
+     */
+    public function getAuthor()
+    {
+        return $this->author;
+    }
+
+    /**
+     * @param \Topycs\Entity\UserInterface $author
+     */
+    public function setAuthor(UserInterface $author)
+    {
+        $this->author = $author;
     }
 }
