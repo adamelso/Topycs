@@ -21,5 +21,6 @@ class ThreadCollectionSpec extends ObjectBehavior
     function it_does_add_thread(ThreadInterface $thread)
     {
         $this->add($thread);
+        $this->get(0)->shouldBe($thread);
     }
 }
