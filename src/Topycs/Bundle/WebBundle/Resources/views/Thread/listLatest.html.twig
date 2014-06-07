@@ -1,15 +1,18 @@
-<div class="threads latest">
-    {% for thread in threads %}
-        <div class="row thread">
-            <div class="small-6 columns">
-                <h4>{{ thread.title }}</h4>
-            </div>
-            <div class="small-2 columns">
-                <p class="posts">Posts: {{ thread.posts|length }}</p>
-            </div>
-            <div class="small-2 columns">
-                <p class="views">0 {{ 'thread.views'|trans }}</p>
-            </div>
-        </div>
-    {% endfor %}
-</div>
+<table width="100%">
+    <thead>
+    <tr>
+        <th width="60%">Title</th>
+        <th width="20%">Posts</th>
+        <th width="20%">Activity</th>
+    </tr>
+    </thead>
+    <tbody>
+        {% for thread in threads %}
+        <tr>
+            <td><a href="">{{ thread.title }}</a></td>
+            <td>{{ thread.posts|length }}</td>
+            <td>0 {{ 'thread.views'|trans }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
