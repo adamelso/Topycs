@@ -4,8 +4,8 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://symfony.com/schema/routing http://symfony.com/schema/routing/routing-1.0.xsd">
 
-    <route id="topycs_web_threads_by_category" pattern="/threads/{category}">
-        <default key="_controller">topycs.controller.thread:listByCategoryAction</default>
+    <route id="topycs_web_index_index" pattern="/">
+        <default key="_controller">topycs.controller.index:indexAction</default>
     </route>
 
 </routes>

@@ -10,17 +10,15 @@
  */
  
 namespace Topycs\Controller;
-
-use Topycs\Repository\ThreadRepository;
 use Symfony\Bundle\FrameworkBundle\Templating\EngineInterface;
 
 /**
- * Class ThreadController
+ * Class IndexController
  *
  * @author Daniel Ribeiro <drgomesp@gmail.com>
  * @package Topycs\Controller
  */
-final class ThreadController
+final class IndexController
 {
     /**
      * @var \Symfony\Bundle\FrameworkBundle\Templating\EngineInterface
@@ -28,29 +26,20 @@ final class ThreadController
     protected $templating;
 
     /**
-     * @var \Topycs\Repository\ThreadRepository
-     */
-    protected $threadRepository;
-
-    /**
      * @param \Symfony\Bundle\FrameworkBundle\Templating\EngineInterface $templating
-     * @param \Topycs\Repository\ThreadRepository $threadRepository
      */
-    public function __construct(EngineInterface $templating, ThreadRepository $threadRepository)
+    public function __construct(EngineInterface $templating)
     {
         $this->templating = $templating;
-        $this->threadRepository = $threadRepository;
     }
 
     /**
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function listByCategoryAction()
-    {   
-        $threads = $this->threadRepository->findByCategory();
-        
-        return $this->templating->renderResponse('@TopycsWeb/Thread/listByCategory.html.twig', [
-            'threads' => $threads,
+    public function indexAction()
+    {
+        return $this->templating->renderResponse('@TopycsWeb/Index/index.html.twig', [
+            
         ]);
     }
 }
