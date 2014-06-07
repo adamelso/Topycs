@@ -10,6 +10,7 @@
  */
  
 namespace Topycs\Controller;
+
 use Symfony\Bundle\FrameworkBundle\Templating\EngineInterface;
 
 /**
@@ -37,7 +38,7 @@ final class IndexController
      * @return \Symfony\Component\HttpFoundation\Response
      */
     public function indexAction()
-    {
+    {   
         return $this->templating->renderResponse('@TopycsWeb/Index/index.html.twig', [
             
         ]);
