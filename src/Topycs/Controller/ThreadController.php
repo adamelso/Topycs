@@ -11,7 +11,6 @@
  
 namespace Topycs\Controller;
 
-use Doctrine\Common\Persistence\ObjectRepository;
 use Topycs\Repository\ThreadRepository;
 use Symfony\Bundle\FrameworkBundle\Templating\EngineInterface;
 
