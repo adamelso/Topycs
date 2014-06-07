@@ -32,5 +32,7 @@ class PostCollection extends ArrayCollection
                 sprintf('Expected \Topycs\Entity\PostInterface, got %s.', get_class($value))
             );
         }
+        
+        parent::add($value);
     }
 }

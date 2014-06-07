@@ -32,5 +32,7 @@ class ThreadCollection extends ArrayCollection
                 sprintf('Expected \Topycs\Entity\ThreadInterface, got %s.', get_class($value))
             );
         }
+
+        parent::add($value);
     }
 }

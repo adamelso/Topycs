@@ -30,5 +30,6 @@ class ThreadBuilderSpec extends ObjectBehavior
         
         $thread->shouldImplement('Topycs\Entity\ThreadInterface');
         $thread->getTitle()->shouldBe('title');
+        $thread->getHeadPost()->shouldBe($post);
     }
 }
