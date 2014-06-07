@@ -52,7 +52,9 @@ class ThreadRepositorySpec extends ObjectBehavior
         $qb->addOrderBy('t.createdAt', 'DESC')->willReturn($qb);
         
         $qb->getQuery()->willReturn($query);
+        $query->getResult()->willReturn([]);
         
-        $this->findByCategory();
+        $result = $this->findByCategory();
+        $result->shouldBeAnInstanceOf('Topycs\Entity\Collection\ThreadCollection');
     }
 }

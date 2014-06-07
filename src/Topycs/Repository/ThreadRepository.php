@@ -13,6 +13,7 @@ namespace Topycs\Repository;
 
 use Doctrine\ORM\EntityRepository;
 use Topycs\Entity\CategoryInterface;
+use Topycs\Entity\Collection\ThreadCollection;
 
 /**
  * Class ThreadRepository
@@ -44,6 +45,8 @@ class ThreadRepository extends EntityRepository
     {
         $qb = $this->createQueryBuilder('t');
         
-        return $qb->getQuery()->getResult();
+        $threads = new ThreadCollection($qb->getQuery()->getResult());
+        
+        return $threads;
     }
 }

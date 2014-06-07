@@ -11,6 +11,7 @@
  
 namespace Topycs\Entity\Collection;
 
+use Topycs\Entity\Thread;
 use Topycs\Entity\ThreadInterface;
 use Doctrine\Common\Collections\ArrayCollection;
 
@@ -22,6 +23,22 @@ use Doctrine\Common\Collections\ArrayCollection;
  */
 class ThreadCollection extends ArrayCollection
 {
+    /**
+     * {@inheritdoc}
+     */
+    public function __construct(array $elements = array())
+    {
+        array_walk($elements, function($item) {
+            if (!$item instanceof Thread) {
+                throw new \InvalidArgumentException(
+                    sprintf('Expected collection of Topycs\Entity\Thread, got %s.', get_class($item))
+                ); 
+            }
+        });
+        
+        parent::__construct($elements);
+    }
+
     /**
      * {@inheritdoc}
      */
