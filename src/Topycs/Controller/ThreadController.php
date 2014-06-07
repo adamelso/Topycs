@@ -53,4 +53,16 @@ final class ThreadController
             'threads' => $threads,
         ]);
     }
+
+    /**
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function listLatestAction()
+    {
+        $threads = $this->threadRepository->findLatest();
+
+        return $this->templating->renderResponse('@TopycsWeb/Thread/listLatest.html.twig', [
+            'threads' => $threads,
+        ]);
+    }
 }

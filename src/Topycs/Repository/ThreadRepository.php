@@ -38,6 +38,8 @@ class ThreadRepository extends EntityRepository
     }
 
     /**
+     * Finds threads by a category.
+     * 
      * @param \Topycs\Entity\CategoryInterface $category
      * @return \Doctrine\Common\Collections\Collection
      */
@@ -47,6 +49,20 @@ class ThreadRepository extends EntityRepository
         
         $threads = new ThreadCollection($qb->getQuery()->getResult());
         
+        return $threads;
+    }
+
+    /**
+     * Finds the latest threads.
+     * 
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function findLatest()
+    {
+        $qb = $this->createQueryBuilder('t');
+
+        $threads = new ThreadCollection($qb->getQuery()->getResult());
+
         return $threads;
     }
 }

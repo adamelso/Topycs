@@ -57,4 +57,24 @@ class ThreadRepositorySpec extends ObjectBehavior
         $result = $this->findByCategory();
         $result->shouldBeAnInstanceOf('Topycs\Entity\Collection\ThreadCollection');
     }
+    
+    function it_finds_latest(
+        QueryBuilder $qb,
+        EntityManager $em,
+        AbstractQuery $query
+    ) {
+        $em->createQueryBuilder()->willReturn($qb);
+
+        $qb->select('t')->willReturn($qb);
+        $qb->from(null, 't')->willReturn($qb);
+
+        $qb->addOrderBy('t.isPinned', 'DESC')->willReturn($qb);
+        $qb->addOrderBy('t.createdAt', 'DESC')->willReturn($qb);
+
+        $qb->getQuery()->willReturn($query);
+        $query->getResult()->willReturn([]);
+
+        $result = $this->findLatest();
+        $result->shouldBeAnInstanceOf('Topycs\Entity\Collection\ThreadCollection');
+    }
 }
