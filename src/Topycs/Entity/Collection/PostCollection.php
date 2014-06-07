@@ -12,6 +12,7 @@
 namespace Topycs\Entity\Collection;
 
 use Topycs\Entity\PostInterface;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * A collection of Post.
@@ -19,12 +20,12 @@ use Topycs\Entity\PostInterface;
  * @author Daniel Ribeiro <drgomesp@gmail.com>
  * @package Topycs\Entity\Collection
  */
-class PostCollection extends \ArrayObject
+class PostCollection extends ArrayCollection
 {
     /**
      * {@inheritdoc}
      */
-    public function append($value)
+    public function add($value)
     {
         if (!$value instanceof PostInterface) {
             throw new \InvalidArgumentException(

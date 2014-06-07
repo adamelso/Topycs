@@ -12,6 +12,7 @@
 namespace Topycs\Entity\Collection;
 
 use Topycs\Entity\ThreadInterface;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * A collection of Thread.
@@ -19,12 +20,12 @@ use Topycs\Entity\ThreadInterface;
  * @author Daniel Ribeiro <drgomesp@gmail.com>
  * @package Topycs\Entity\Collection
  */
-class ThreadCollection extends \ArrayObject
+class ThreadCollection extends ArrayCollection
 {
     /**
      * {@inheritdoc}
      */
-    public function append($value)
+    public function add($value)
     {
         if (!$value instanceof ThreadInterface) {
             throw new \InvalidArgumentException(

@@ -69,6 +69,11 @@ class Thread implements ThreadInterface
      */
     protected $isPinned;
 
+    public function __construct()
+    {
+        $this->posts = new PostCollection();
+    }
+    
     /**
      * {@inheritdoc}
      */
@@ -82,7 +87,7 @@ class Thread implements ThreadInterface
      */
     public function getHeadPost()
     {
-        return $this->posts->offsetGet(0);
+        return $this->posts->get(0);
     }
 
     /**
@@ -144,7 +149,7 @@ class Thread implements ThreadInterface
      */
     public function addPost(PostInterface $post)
     {
-        $this->posts->append($post);
+        $this->posts->add($post);
     }
 
     /**
