@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the discussion-Topycs package.
+ * This file is part of the Topycs package.
  *
  * (c) Daniel Ribeiro <drgomesp@gmail.com>
  *
