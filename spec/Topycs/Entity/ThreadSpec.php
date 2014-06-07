@@ -11,4 +11,10 @@ class ThreadSpec extends ObjectBehavior
     {
         $this->shouldHaveType('Topycs\Entity\Thread');
     }
+    
+    function it_initializes_with_empty_post_collection()
+    {
+        $this->getPosts()->shouldBeAnInstanceOf('Topycs\Entity\Collection\PostCollection');
+        $this->getPosts()->count()->shouldBe(0);
+    }
 }
