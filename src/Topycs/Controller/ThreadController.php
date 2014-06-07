@@ -50,7 +50,7 @@ final class ThreadController
     {   
         $threads = $this->threadRepository->findByCategory();
         
-        return $this->templating->renderResponse('::Thread/listByCategory.html.twig', [
+        return $this->templating->renderResponse('@TopycsWeb/Thread/listByCategory.html.twig', [
             'threads' => $threads,
         ]);
     }

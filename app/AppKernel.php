@@ -17,6 +17,7 @@ class AppKernel extends Kernel
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new Topycs\Bundle\BootstrapBundle\TopycsBootstrapBundle(),
+            new Topycs\Bundle\WebBundle\TopycsWebBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
