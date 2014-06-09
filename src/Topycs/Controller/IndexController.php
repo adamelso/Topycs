@@ -43,4 +43,11 @@ final class IndexController
             
         ]);
     }
+    
+    public function latestAction()
+    {
+        return $this->templating->renderResponse('@TopycsWeb/Index/latest.html.twig', [
+            
+        ]);
+    }
 }

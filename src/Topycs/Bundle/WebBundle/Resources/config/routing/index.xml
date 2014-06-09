@@ -8,4 +8,8 @@
         <default key="_controller">topycs.controller.index:indexAction</default>
     </route>
 
+    <route id="topycs_web_index_latest" pattern="/latest">
+        <default key="_controller">topycs.controller.index:latestAction</default>
+    </route>
+
 </routes>
