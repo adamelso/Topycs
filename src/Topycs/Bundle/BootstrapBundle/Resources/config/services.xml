@@ -6,6 +6,7 @@
 
     <imports>
         <import resource="services/parameters.xml"/>
+        <import resource="services/eventListeners.xml"/>
         <import resource="services/controllers.xml"/>
         <import resource="services/repositories.xml"/>
         <import resource="services/twig.xml"/>

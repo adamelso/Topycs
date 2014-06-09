@@ -15,6 +15,7 @@ use Doctrine\ORM\Mapping as ORM;
 use FOS\UserBundle\Model\User as BaseUser;
 use Topycs\Entity\Collection\PostCollection;
 use Topycs\Entity\Collection\ThreadCollection;
+use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
  * Class User
@@ -46,6 +47,7 @@ class User extends BaseUser implements UserInterface
     /**
      * @var \DateTime
      *
+     * @Gedmo\Timestampable(on="create")
      * @ORM\Column(type="datetime", name="created_at")
      */
     protected $createdAt;
@@ -53,6 +55,7 @@ class User extends BaseUser implements UserInterface
     /**
      * @var \DateTime
      *
+     * @Gedmo\Timestampable(on="update")
      * @ORM\Column(type="datetime", name="updated_at")
      */
     protected $updatedAt;
