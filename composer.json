@@ -28,7 +28,7 @@
         "stof/doctrine-extensions-bundle": "~1.1",
         "runmybusiness/initialcon": "0.1.0",
         "erusev/parsedown": "1.0.1",
-        "friendsofsymfony/user-bundle": "v1.3.3"
+        "friendsofsymfony/user-bundle": "2.0.*@dev"
     },
     "require-dev": {
         "behat/behat": "~3.0.6",
