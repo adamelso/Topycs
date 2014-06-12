@@ -21,7 +21,7 @@ use Topycs\Entity\Collection\ThreadCollection;
  * @author Daniel Ribeiro <drgomesp@gmail.com>
  * @package Topycs\Repository
  */
-class ThreadRepository extends EntityRepository
+class ThreadRepository extends EntityRepository implements ThreadRepositoryInterface
 {
     /**
      * {@inheritdoc}
@@ -38,10 +38,7 @@ class ThreadRepository extends EntityRepository
     }
 
     /**
-     * Finds threads by a category.
-     * 
-     * @param \Topycs\Entity\CategoryInterface $category
-     * @return \Doctrine\Common\Collections\Collection
+     * {@inheritdoc}
      */
     public function findByCategory(CategoryInterface $category = null)
     {
@@ -53,9 +50,7 @@ class ThreadRepository extends EntityRepository
     }
 
     /**
-     * Finds the latest threads.
-     * 
-     * @return \Doctrine\Common\Collections\Collection
+     * {@inheritdoc}
      */
     public function findLatest()
     {

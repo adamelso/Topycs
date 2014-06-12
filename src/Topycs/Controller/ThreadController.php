@@ -11,7 +11,7 @@
  
 namespace Topycs\Controller;
 
-use Topycs\Repository\ThreadRepository;
+use Topycs\Repository\ThreadRepositoryInterface;
 use Symfony\Bundle\FrameworkBundle\Templating\EngineInterface;
 
 /**
@@ -28,15 +28,15 @@ final class ThreadController
     protected $templating;
 
     /**
-     * @var \Topycs\Repository\ThreadRepository
+     * @var \Topycs\Repository\ThreadRepositoryInterface
      */
     protected $threadRepository;
 
     /**
      * @param \Symfony\Bundle\FrameworkBundle\Templating\EngineInterface $templating
-     * @param \Topycs\Repository\ThreadRepository $threadRepository
+     * @param \Topycs\Repository\ThreadRepositoryInterface $threadRepository
      */
-    public function __construct(EngineInterface $templating, ThreadRepository $threadRepository)
+    public function __construct(EngineInterface $templating, ThreadRepositoryInterface $threadRepository)
     {
         $this->templating = $templating;
         $this->threadRepository = $threadRepository;

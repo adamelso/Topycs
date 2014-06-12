@@ -15,18 +15,18 @@ use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 use Symfony\Bundle\FrameworkBundle\Templating\EngineInterface;
 use Symfony\Component\HttpFoundation\Response;
-use Topycs\Repository\ThreadRepository;
+use Topycs\Repository\ThreadRepositoryInterface;
 
 class ThreadControllerSpec extends ObjectBehavior
 {
-    function let(EngineInterface $templating, ThreadRepository $threadRepository)
+    function let(EngineInterface $templating, ThreadRepositoryInterface $threadRepository)
     {
         $this->beConstructedWith($templating, $threadRepository);
     }
     
     function it_has_action_that_lists_by_category(
         EngineInterface $templating,
-        ThreadRepository $threadRepository,
+        ThreadRepositoryInterface $threadRepository,
         Response $response
     ) {
         $threadRepository->findByCategory()->shouldBeCalled()->willReturn([]);
