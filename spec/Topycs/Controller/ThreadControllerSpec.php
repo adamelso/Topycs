@@ -15,6 +15,7 @@ use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 use Symfony\Bundle\FrameworkBundle\Templating\EngineInterface;
 use Symfony\Component\HttpFoundation\Response;
+use Topycs\Entity\CategoryInterface;
 use Topycs\Repository\ThreadRepositoryInterface;
 
 class ThreadControllerSpec extends ObjectBehavior
@@ -27,15 +28,16 @@ class ThreadControllerSpec extends ObjectBehavior
     function it_has_action_that_lists_by_category(
         EngineInterface $templating,
         ThreadRepositoryInterface $threadRepository,
+        CategoryInterface $category,
         Response $response
     ) {
-        $threadRepository->findByCategory()->shouldBeCalled()->willReturn([]);
+        $threadRepository->findByCategory($category)->shouldBeCalled()->willReturn([]);
         
         $templating->renderResponse('@TopycsWeb/Thread/listByCategory.html.twig', [
             'threads' => [],
         ])->shouldBeCalled()->willReturn($response);
         
-        $response = $this->listByCategoryAction();
+        $response = $this->listByCategoryAction($category);
 
         $response->shouldBeAnInstanceOf('Symfony\Component\HttpFoundation\Response');
     }

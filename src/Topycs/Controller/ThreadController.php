@@ -11,6 +11,7 @@
  
 namespace Topycs\Controller;
 
+use Topycs\Entity\CategoryInterface;
 use Topycs\Repository\ThreadRepositoryInterface;
 use Symfony\Bundle\FrameworkBundle\Templating\EngineInterface;
 
@@ -43,11 +44,12 @@ final class ThreadController
     }
 
     /**
+     * @param \Topycs\Entity\CategoryInterface $category
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function listByCategoryAction()
+    public function listByCategoryAction(CategoryInterface $category)
     {   
-        $threads = $this->threadRepository->findByCategory();
+        $threads = $this->threadRepository->findByCategory($category);
         
         return $this->templating->renderResponse('@TopycsWeb/Thread/listByCategory.html.twig', [
             'threads' => $threads,
