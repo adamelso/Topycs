@@ -34,6 +34,7 @@ class ThreadControllerSpec extends ObjectBehavior
         $threadRepository->findByCategory($category)->shouldBeCalled()->willReturn([]);
         
         $templating->renderResponse('@TopycsWeb/Thread/listByCategory.html.twig', [
+            'category' => $category,
             'threads' => [],
         ])->shouldBeCalled()->willReturn($response);
         
