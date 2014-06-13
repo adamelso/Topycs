@@ -10,6 +10,7 @@
  */
  
 namespace Topycs\Entity;
+use Topycs\Entity\Collection\ThreadCollection;
 
 /**
  * Defines a Category.
@@ -45,4 +46,19 @@ interface CategoryInterface
      * @throws \InvalidArgumentException
      */
     public function setDescription($description);
+
+    /**
+     * @return \Topycs\Entity\Collection\ThreadCollection
+     */
+    public function getThreads();
+
+    /**
+     * @param \Topycs\Entity\Collection\ThreadCollection $threads
+     */
+    public function setThreads(ThreadCollection $threads);
+
+    /**
+     * @param \Topycs\Entity\ThreadInterface $thread
+     */
+    public function addThread(ThreadInterface $thread);
 }

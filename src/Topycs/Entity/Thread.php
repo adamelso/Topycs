@@ -42,6 +42,13 @@ class Thread implements ThreadInterface
     protected $title;
 
     /**
+     * @var \Topycs\Entity\CategoryInterface
+     * 
+     * @ORM\ManyToOne(targetEntity="\Topycs\Entity\Category", inversedBy="thread")
+     */
+    protected $category;
+    
+    /**
      * @var \Topycs\Entity\Collection\PostCollection
      * 
      * @ORM\OneToMany(targetEntity="\Topycs\Entity\Post", mappedBy="thread")
