@@ -11,17 +11,12 @@
  
 namespace Topycs\Repository;
 
-use Doctrine\ORM\EntityRepository;
-use Topycs\Entity\CategoryInterface;
-use Topycs\Entity\Collection\ThreadCollection;
-
 /**
- * Class ThreadRepository
+ * Defines a User Repository.
  *
  * @author Daniel Ribeiro <drgomesp@gmail.com>
  * @package Topycs\Repository
  */
-class UserRepository extends EntityRepository implements UserRepositoryInterface
+interface UserRepositoryInterface
 {
-    
 }
