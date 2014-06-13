@@ -37,14 +37,14 @@ class Category implements CategoryInterface
     /**
      * @var string
      * 
-     * @ORM\Column(type="text")
+     * @ORM\Column(type="string")
      */
     protected $name;
 
     /**
      * @var string
      *
-     * @ORM\Column(type="text")
+     * @ORM\Column(type="string")
      */
     protected $description;
 
