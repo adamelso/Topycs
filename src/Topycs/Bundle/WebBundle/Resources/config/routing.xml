@@ -5,6 +5,7 @@
     xsi:schemaLocation="http://symfony.com/schema/routing http://symfony.com/schema/routing/routing-1.0.xsd">
 
     <import prefix="/" resource="routing/index.xml" />
-    <import prefix="/t" resource="routing/thread.xml" />
+    <import prefix="/thread" resource="routing/thread.xml" />
+    <import prefix="/category" resource="routing/category.xml" />
     
 </routes>

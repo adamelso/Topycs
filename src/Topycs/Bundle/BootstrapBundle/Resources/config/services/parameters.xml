@@ -7,6 +7,7 @@
     <parameters>
         <parameter key="topycs.controller.index.class">Topycs\Controller\IndexController</parameter>
         <parameter key="topycs.controller.thread.class">Topycs\Controller\ThreadController</parameter>
+        <parameter key="topycs.controller.category.class">Topycs\Controller\CategoryController</parameter>
         <parameter key="topycs.entity.thread.class">Topycs\Entity\Thread</parameter>
         <parameter key="topycs.repository.thread.class">Topycs\Repository\ThreadRepository</parameter>
     </parameters>

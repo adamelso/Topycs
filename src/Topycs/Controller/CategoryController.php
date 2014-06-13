@@ -22,7 +22,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
  * @author Daniel Ribeiro <drgomesp@gmail.com>
  * @package Topycs\Controller
  */
-final class ThreadController
+final class CategoryController
 {
     /**
      * @var \Symfony\Bundle\FrameworkBundle\Templating\EngineInterface
@@ -30,43 +30,23 @@ final class ThreadController
     protected $templating;
 
     /**
-     * @var \Topycs\Repository\ThreadRepositoryInterface
-     */
-    protected $threadRepository;
-
-    /**
      * @param \Symfony\Bundle\FrameworkBundle\Templating\EngineInterface $templating
-     * @param \Topycs\Repository\ThreadRepositoryInterface $threadRepository
      */
-    public function __construct(EngineInterface $templating, ThreadRepositoryInterface $threadRepository)
+    public function __construct(EngineInterface $templating)
     {
         $this->templating = $templating;
-        $this->threadRepository = $threadRepository;
     }
 
     /**
      * @param \Topycs\Entity\CategoryInterface $category
      * @return \Symfony\Component\HttpFoundation\Response
+     * 
+     * @ParamConverter("category", class="Entity:Category")
      */
-    public function listByCategoryAction(CategoryInterface $category)
-    {   
-        $threads = $this->threadRepository->findByCategory($category);
-        
-        return $this->templating->renderResponse('@TopycsWeb/Thread/listByCategory.html.twig', [
-            'category' => $category,
-            'threads' => $threads,
-        ]);
-    }
-
-    /**
-     * @return \Symfony\Component\HttpFoundation\Response
-     */
-    public function listLatestAction()
+    public function listThreads(CategoryInterface $category)
     {
-        $threads = $this->threadRepository->findLatest();
-
-        return $this->templating->renderResponse('@TopycsWeb/Thread/listLatest.html.twig', [
-            'threads' => $threads,
+        return $this->templating->renderResponse('@TopycsWeb/Category/listThreads.html.twig', [
+            'category' => $category,
         ]);
     }
 }

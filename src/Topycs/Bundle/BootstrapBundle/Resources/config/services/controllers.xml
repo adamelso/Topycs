@@ -13,6 +13,10 @@
             <argument type="service" id="templating" />
             <argument type="service" id="topycs.repository.thread" />
         </service>
+
+        <service id="topycs.controller.category" class="%topycs.controller.category.class%">
+            <argument type="service" id="templating" />
+        </service>
     </services>
     
 </container>
