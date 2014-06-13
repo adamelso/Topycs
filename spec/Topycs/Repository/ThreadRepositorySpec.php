@@ -8,6 +8,7 @@ use Doctrine\ORM\Mapping\ClassMetadata;
 use Doctrine\ORM\QueryBuilder;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
+use Topycs\Entity\CategoryInterface;
 
 class ThreadRepositorySpec extends ObjectBehavior
 {
@@ -41,7 +42,8 @@ class ThreadRepositorySpec extends ObjectBehavior
     function it_finds_by_category(
         QueryBuilder $qb, 
         EntityManager $em,
-        AbstractQuery $query
+        AbstractQuery $query,
+        CategoryInterface $category
     ) {
         $em->createQueryBuilder()->willReturn($qb);
 
@@ -54,7 +56,7 @@ class ThreadRepositorySpec extends ObjectBehavior
         $qb->getQuery()->willReturn($query);
         $query->getResult()->willReturn([]);
         
-        $result = $this->findByCategory();
+        $result = $this->findByCategory($category);
         $result->shouldBeAnInstanceOf('Topycs\Entity\Collection\ThreadCollection');
     }
     

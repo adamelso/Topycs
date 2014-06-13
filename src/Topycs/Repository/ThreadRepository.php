@@ -40,7 +40,7 @@ class ThreadRepository extends EntityRepository implements ThreadRepositoryInter
     /**
      * {@inheritdoc}
      */
-    public function findByCategory(CategoryInterface $category = null)
+    public function findByCategory(CategoryInterface $category)
     {
         $qb = $this->createQueryBuilder('t');
         
