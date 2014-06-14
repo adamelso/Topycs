@@ -11,6 +11,6 @@ The main idea of the project is to create a modern, flexible and extensible disc
 
 Also, we want to focus on extensibility, where the developers can modify the platform in every possible way. We want to make the extension development a pleasent and lovely experience for our community.
 
-Topycs' development process follows the [BDD](http://en.wikipedia.org/wiki/Behavior-driven_development) methodology, with [phpspec](http://phpspec.net/) and [Behat](http://behat.org/).
+Topycs' development process follows the **[BDD](http://en.wikipedia.org/wiki/Behavior-driven_development)** methodology, with **[phpspec](http://phpspec.net/)** and **[Behat](http://behat.org/)**.
 
 ----------
