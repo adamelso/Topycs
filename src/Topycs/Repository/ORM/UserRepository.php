@@ -9,11 +9,10 @@
  * file that was distributed with this source code.
  */
  
-namespace Topycs\Repository;
+namespace Topycs\Repository\ORM;
 
 use Doctrine\ORM\EntityRepository;
-use Topycs\Entity\CategoryInterface;
-use Topycs\Entity\Collection\ThreadCollection;
+use Topycs\Repository\UserRepositoryInterface;
 
 /**
  * Class ThreadRepository
