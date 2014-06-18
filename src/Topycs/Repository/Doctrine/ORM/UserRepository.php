@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
  
-namespace Topycs\Repository\ORM;
+namespace Topycs\Repository\Doctrine\ORM;
 
 use Doctrine\ORM\EntityRepository;
 use Topycs\Repository\UserRepositoryInterface;

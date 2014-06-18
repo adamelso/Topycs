@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace spec\Topycs\Repository\ORM;
+namespace spec\Topycs\Repository\Doctrine\ORM;
 
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;

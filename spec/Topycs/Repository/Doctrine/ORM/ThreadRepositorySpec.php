@@ -1,6 +1,6 @@
 <?php
 
-namespace spec\Topycs\Repository\ORM;
+namespace spec\Topycs\Repository\Doctrine\ORM;
 
 use Doctrine\ORM\AbstractQuery;
 use Doctrine\ORM\EntityManager;
@@ -21,7 +21,7 @@ class ThreadRepositorySpec extends ObjectBehavior
 
     function it_is_initializable()
     {
-        $this->shouldHaveType('Topycs\Repository\ORM\ThreadRepository');
+        $this->shouldHaveType('Topycs\Repository\Doctrine\ORM\ThreadRepository');
     }
     
     function it_creates_query_builder_correctly(
