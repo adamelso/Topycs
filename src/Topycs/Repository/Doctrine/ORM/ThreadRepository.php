@@ -14,6 +14,7 @@ namespace Topycs\Repository\Doctrine\ORM;
 use Doctrine\ORM\EntityRepository;
 use Topycs\Entity\CategoryInterface;
 use Topycs\Entity\Collection\ThreadCollection;
+use Topycs\Entity\ThreadInterface;
 use Topycs\Repository\ThreadRepositoryInterface;
 
 /**
@@ -24,6 +25,24 @@ use Topycs\Repository\ThreadRepositoryInterface;
  */
 class ThreadRepository extends EntityRepository implements ThreadRepositoryInterface
 {
+    /**
+     * {@inheritdoc}
+     */
+    public function add(ThreadInterface $thread)
+    {
+        $this->getEntityManager()->persist($thread);
+        $this->getEntityManager()->flush();
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function remove(ThreadInterface $thread)
+    {
+        $this->getEntityManager()->remove($thread);
+        $this->getEntityManager()->flush();
+    }
+    
     /**
      * {@inheritdoc}
      */

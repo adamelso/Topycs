@@ -12,6 +12,7 @@
 namespace Topycs\Repository\Doctrine\ORM;
 
 use Doctrine\ORM\EntityRepository;
+use Topycs\Entity\Collection\UserCollection;
 use Topycs\Entity\UserInterface;
 use Topycs\Repository\UserRepositoryInterface;
 
@@ -23,6 +24,16 @@ use Topycs\Repository\UserRepositoryInterface;
  */
 class UserRepository extends EntityRepository implements UserRepositoryInterface
 {
+    /**
+     * @var \Topycs\Entity\Collection\UserCollectionInterface;
+     */
+    private $collection;
+    
+    public function __construct()
+    {
+        $this->collection = new UserCollection();
+    }
+    
     /**
      * {@inheritdoc}
      */
@@ -44,8 +55,9 @@ class UserRepository extends EntityRepository implements UserRepositoryInterface
     /**
      * {@inheritdoc}
      */
-    public function get($userId)
+    public function findAll()
     {
-        return parent::find($userId);
+        $this->collection = parent::findAll();
+        return $this->collection;
     }
 }

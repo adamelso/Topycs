@@ -21,15 +21,4 @@ class UserCollectionSpec extends ObjectBehavior
     {
         $this->shouldHaveType('Topycs\Entity\Collection\UserCollection');
     }
-    
-    function it_does_not_add_non_user(\stdClass $item)
-    {
-        $this->shouldThrow('\InvalidArgumentException')->duringAdd($item);
-    }
-    
-    function it_does_add_user(UserInterface $user)
-    {
-        $this->add($user);
-        $this->get(0)->shouldBe($user);
-    }
 }

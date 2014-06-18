@@ -15,24 +15,36 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Topycs\Entity\UserInterface;
 
 /**
- * A collection of User.
+ * An implementation of a UserCollectionInterface using doctrine's ArrayCollection.
  *
  * @author Daniel Ribeiro <drgomesp@gmail.com>
  * @package Topycs\Entity\Collection
  */
-class UserCollection extends ArrayCollection
+class UserCollection implements UserCollectionInterface
 {
+    /**
+     * @var \Doctrine\Common\Collections\ArrayCollection
+     */
+    protected $collection;
+    
+    public function __construct()
+    {
+        $this->collection = new ArrayCollection();
+    }
+
     /**
      * {@inheritdoc}
      */
-    public function add($value)
+    public function add(UserInterface $user)
     {
-        if (!$value instanceof UserInterface) {
-            throw new \InvalidArgumentException(
-                sprintf('Expected \Topycs\Entity\UserInterface, got %s.', get_class($value))
-            );
-        }
-        
-        parent::add($value);
+        $this->collection->add($user);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function remove(UserInterface $user)
+    {
+        $this->collection->remove($user);
     }
 }

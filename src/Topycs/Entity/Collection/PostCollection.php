@@ -20,19 +20,39 @@ use Doctrine\Common\Collections\ArrayCollection;
  * @author Daniel Ribeiro <drgomesp@gmail.com>
  * @package Topycs\Entity\Collection
  */
-class PostCollection extends ArrayCollection
+class PostCollection implements PostCollectionInterface
 {
+    /**
+     * @var \Doctrine\Common\Collections\ArrayCollection
+     */
+    protected $collection;
+
+    public function __construct()
+    {
+        $this->collection = new ArrayCollection();
+    }
+
     /**
      * {@inheritdoc}
      */
-    public function add($value)
+    public function add(PostInterface $post)
     {
-        if (!$value instanceof PostInterface) {
-            throw new \InvalidArgumentException(
-                sprintf('Expected \Topycs\Entity\PostInterface, got %s.', get_class($value))
-            );
-        }
-        
-        parent::add($value);
+        $this->collection->add($post);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function remove(PostInterface $post)
+    {
+        $this->collection->remove($post);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function get($key)
+    {
+        return $this->collection->get($key);
     }
 }

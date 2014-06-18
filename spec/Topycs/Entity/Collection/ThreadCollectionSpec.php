@@ -21,15 +21,4 @@ class ThreadCollectionSpec extends ObjectBehavior
     {
         $this->shouldHaveType('Topycs\Entity\Collection\ThreadCollection');
     }
-
-    function it_does_not_add_non_thread(\stdClass $item)
-    {
-        $this->shouldThrow('\InvalidArgumentException')->duringAdd($item);
-    }
-    
-    function it_does_add_thread(ThreadInterface $thread)
-    {
-        $this->add($thread);
-        $this->get(0)->shouldBe($thread);
-    }
 }

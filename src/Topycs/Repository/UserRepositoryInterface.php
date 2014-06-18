@@ -11,7 +11,7 @@
  
 namespace Topycs\Repository;
 
-use Topycs\Entity\UserInterface;
+use Topycs\Entity\Collection\UserCollectionInterface;
 
 /**
  * Defines a User Repository.
@@ -19,34 +19,12 @@ use Topycs\Entity\UserInterface;
  * @author Daniel Ribeiro <drgomesp@gmail.com>
  * @package Topycs\Repository
  */
-interface UserRepositoryInterface
+interface UserRepositoryInterface extends UserCollectionInterface
 {
-    /**
-     * Adds a user.
-     * 
-     * @param \Topycs\Entity\UserInterface $user
-     */
-    public function add(UserInterface $user);
-
-    /**
-     * Removes a user.
-     * 
-     * @param \Topycs\Entity\UserInterface $user
-     */
-    public function remove(UserInterface $user);
-
     /**
      * Finds all users.
      * 
-     * @return \Topycs\Entity\Collection\UserCollection
+     * @return \Topycs\Entity\Collection\UserCollectionInterface
      */
     public function findAll();
-
-    /**
-     * Gets a user by its id.
-     * 
-     * @param int $userId
-     * @return \Topycs\Entity\UserInterface
-     */
-    public function get($userId);
 }

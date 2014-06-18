@@ -16,40 +16,36 @@ use Topycs\Entity\ThreadInterface;
 use Doctrine\Common\Collections\ArrayCollection;
 
 /**
- * A collection of Thread.
+ * An implementation of a ThreadCollectionInterface using doctrine's ArrayCollection.
  *
  * @author Daniel Ribeiro <drgomesp@gmail.com>
  * @package Topycs\Entity\Collection
  */
-class ThreadCollection extends ArrayCollection
+class ThreadCollection implements ThreadCollectionInterface
 {
     /**
-     * {@inheritdoc}
+     * @var \Doctrine\Common\Collections\ArrayCollection
      */
-    public function __construct(array $elements = array())
+    protected $collection;
+
+    public function __construct()
     {
-        array_walk($elements, function($item) {
-            if (!$item instanceof Thread) {
-                throw new \InvalidArgumentException(
-                    sprintf('Expected collection of Topycs\Entity\Thread, got %s.', get_class($item))
-                ); 
-            }
-        });
-        
-        parent::__construct($elements);
+        $this->collection = new ArrayCollection();
     }
 
     /**
      * {@inheritdoc}
      */
-    public function add($value)
+    public function add(ThreadInterface $thread)
     {
-        if (!$value instanceof ThreadInterface) {
-            throw new \InvalidArgumentException(
-                sprintf('Expected \Topycs\Entity\ThreadInterface, got %s.', get_class($value))
-            );
-        }
+        $this->collection->add($thread);
+    }
 
-        parent::add($value);
+    /**
+     * {@inheritdoc}
+     */
+    public function remove(ThreadInterface $thread)
+    {
+        $this->collection->remove($thread);
     }
 }

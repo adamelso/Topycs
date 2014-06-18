@@ -21,15 +21,4 @@ class PostCollectionSpec extends ObjectBehavior
     {
         $this->shouldHaveType('Topycs\Entity\Collection\PostCollection');
     }
-    
-    function it_does_not_add_non_post(\stdClass $item)
-    {
-        $this->shouldThrow('\InvalidArgumentException')->duringAdd($item);
-    }
-    
-    function it_does_add_post(PostInterface $post)
-    {
-        $this->add($post);
-        $this->get(0)->shouldBe($post);
-    }
 }
