@@ -12,6 +12,7 @@
 namespace Topycs\Repository\Doctrine\ORM;
 
 use Doctrine\ORM\EntityRepository;
+use Topycs\Entity\UserInterface;
 use Topycs\Repository\UserRepositoryInterface;
 
 /**
@@ -22,5 +23,29 @@ use Topycs\Repository\UserRepositoryInterface;
  */
 class UserRepository extends EntityRepository implements UserRepositoryInterface
 {
-    
+    /**
+     * {@inheritdoc}
+     */
+    public function add(UserInterface $user)
+    {
+        $this->getEntityManager()->persist($user);
+        $this->getEntityManager()->flush();
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function remove(UserInterface $user)
+    {
+        $this->getEntityManager()->remove($user);
+        $this->getEntityManager()->flush();
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function get($userId)
+    {
+        return parent::find($userId);
+    }
 }
