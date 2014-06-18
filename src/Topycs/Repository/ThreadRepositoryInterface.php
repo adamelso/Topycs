@@ -12,6 +12,7 @@
 namespace Topycs\Repository;
 
 use Topycs\Entity\CategoryInterface;
+use Topycs\Entity\ThreadInterface;
 
 /**
  * Defines a Thread Repository.
@@ -22,6 +23,35 @@ use Topycs\Entity\CategoryInterface;
 interface ThreadRepositoryInterface
 {
     /**
+     * Adds a thread.
+     *
+     * @param \Topycs\Entity\ThreadInterface $thread
+     */
+    public function add(ThreadInterface $thread);
+
+    /**
+     * Removes a thread.
+     *
+     * @param \Topycs\Entity\ThreadInterface $thread
+     */
+    public function remove(ThreadInterface $thread);
+
+    /**
+     * Finds all threads.
+     *
+     * @return \Topycs\Entity\Collection\ThreadCollection
+     */
+    public function findAll();
+
+    /**
+     * Gets a thread by its id.
+     * 
+     * @param int $threadId
+     * @return \Topycs\Entity\ThreadInterface
+     */
+    public function get($threadId);
+    
+    /**
      * Finds the latest threads.
      * 
      * @return \Topycs\Entity\Collection\ThreadCollection
@@ -31,7 +61,7 @@ interface ThreadRepositoryInterface
     /**
      * Finds threads by category.
      * 
-     * @param CategoryInterface $category
+     * @param \Topycs\Entity\CategoryInterface $category
      * @return \Topycs\Entity\Collection\ThreadCollection
      */
     public function findByCategory(CategoryInterface $category);

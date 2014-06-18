@@ -11,6 +11,8 @@
  
 namespace Topycs\Repository;
 
+use Topycs\Entity\UserInterface;
+
 /**
  * Defines a User Repository.
  *
@@ -19,4 +21,32 @@ namespace Topycs\Repository;
  */
 interface UserRepositoryInterface
 {
+    /**
+     * Adds a user.
+     * 
+     * @param \Topycs\Entity\UserInterface $user
+     */
+    public function add(UserInterface $user);
+
+    /**
+     * Removes a user.
+     * 
+     * @param \Topycs\Entity\UserInterface $user
+     */
+    public function remove(UserInterface $user);
+
+    /**
+     * Finds all users.
+     * 
+     * @return \Topycs\Entity\Collection\UserCollection
+     */
+    public function findAll();
+
+    /**
+     * Gets a user by its id.
+     * 
+     * @param int $userId
+     * @return \Topycs\Entity\UserInterface
+     */
+    public function get($userId);
 }
