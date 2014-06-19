@@ -37,7 +37,8 @@
         "behat/symfony2-extension": "*@dev",
         "behat/mink-extension": "*@dev",
         "behat/mink-browserkit-driver": "*@dev",
-        "knplabs/friendly-contexts": "dev-master@dev"
+        "knplabs/friendly-contexts": "dev-master@dev",
+        "pdepend/pdepend": "1.1.0"
     },
     "scripts": {
         "post-install-cmd": [
