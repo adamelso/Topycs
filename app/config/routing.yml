@@ -1,3 +1,7 @@
+topycs_discussion_platform:
+    resource: "@TopycsDiscussionPlatformBundle/Resources/config/routing.xml"
+    prefix:   /
+
 topycs_web:
     resource: "@TopycsWebBundle/Resources/config/routing.xml"
     prefix:   /
