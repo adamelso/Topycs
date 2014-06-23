@@ -35,7 +35,7 @@ assetic:
     debug:          "%kernel.debug%"
     use_controller: false
     bundles:
-        - TopycsWebBundle
+        - TopycsDiscussionPlatformBundle
     #java: /usr/bin/java
     filters:
         cssrewrite: ~
@@ -62,9 +62,9 @@ doctrine:
         auto_generate_proxy_classes: "%kernel.debug%"
         mappings:
             model:
-                type: annotation
-                dir: "%kernel.root_dir%/../src/Topycs/Entity"
-                prefix: Topycs\Entity
+                type: xml
+                dir: "%kernel.root_dir%/../src/Topycs/DiscussionPlatformBundle/Resources/config/doctrine"
+                prefix: Topycs\Discussions\Entity
                 alias: Entity
                 is_bundle: false
 
@@ -79,7 +79,7 @@ swiftmailer:
 fos_user:
     db_driver: orm
     firewall_name: main
-    user_class: Topycs\Entity\User
+    user_class: Topycs\Discussions\Entity\User
 
 stof_doctrine_extensions:
     default_locale: en_US

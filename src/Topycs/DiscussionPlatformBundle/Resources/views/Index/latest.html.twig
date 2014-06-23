@@ -1,0 +1,7 @@
+{% extends 'TopycsWebBundle:Layout:layout.html.twig' %}
+
+{% block content %}
+    
+    {{ render(controller('topycs.controller.thread:listLatestAction')) }}
+    
+{% endblock %}

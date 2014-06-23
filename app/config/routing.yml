@@ -2,10 +2,6 @@ topycs_discussion_platform:
     resource: "@TopycsDiscussionPlatformBundle/Resources/config/routing.xml"
     prefix:   /
 
-topycs_web:
-    resource: "@TopycsWebBundle/Resources/config/routing.xml"
-    prefix:   /
-
 fos_user_security:
     resource: "@FOSUserBundle/Resources/config/routing/security.xml"
 

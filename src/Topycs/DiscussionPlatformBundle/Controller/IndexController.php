@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
  
-namespace Topycs\Controller;
+namespace Topycs\DiscussionPlatformBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Templating\EngineInterface;
 
@@ -39,14 +39,14 @@ final class IndexController
      */
     public function indexAction()
     {   
-        return $this->templating->renderResponse('@TopycsWeb/Index/index.html.twig', [
+        return $this->templating->renderResponse('@TopycsDiscussionPlatform/Default/index.html.twig', [
             
         ]);
     }
     
     public function latestAction()
     {
-        return $this->templating->renderResponse('@TopycsWeb/Index/latest.html.twig', [
+        return $this->templating->renderResponse('@TopycsDiscussionPlatform/Index/latest.html.twig', [
             
         ]);
     }

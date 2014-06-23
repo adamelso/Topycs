@@ -18,8 +18,6 @@ class AppKernel extends Kernel
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new FOS\UserBundle\FOSUserBundle(),
             new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
-            new Topycs\Bundle\BootstrapBundle\TopycsBootstrapBundle(),
-            new Topycs\Bundle\WebBundle\TopycsWebBundle(),
             new Topycs\DiscussionPlatformBundle\TopycsDiscussionPlatformBundle(),
         );
 

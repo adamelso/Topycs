@@ -4,7 +4,8 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://symfony.com/schema/routing http://symfony.com/schema/routing/routing-1.0.xsd">
 
-    <route id="topycs_discussion_platform_homepage" pattern="/hello/{name}">
-        <default key="_controller">TopycsDiscussionPlatformBundle:Default:index</default>
-    </route>
+    <import prefix="/" resource="routing/index.xml" />
+    <import prefix="/thread" resource="routing/thread.xml" />
+    <import prefix="/category" resource="routing/category.xml" />
+    
 </routes>

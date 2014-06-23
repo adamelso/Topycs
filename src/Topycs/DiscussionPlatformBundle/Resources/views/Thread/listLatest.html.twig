@@ -1,0 +1,18 @@
+<table width="100%">
+    <thead>
+    <tr>
+        <th width="60%">Title</th>
+        <th width="20%">Posts</th>
+        <th width="20%">Activity</th>
+    </tr>
+    </thead>
+    <tbody>
+        {% for thread in threads %}
+        <tr>
+            <td><a href="">{{ thread.title }}</a></td>
+            <td>{{ thread.posts|length }}</td>
+            <td>0 {{ 'thread.views'|trans }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
