@@ -23,7 +23,7 @@ use Topycs\Discussions\Entity\CategoryInterface;
 final class CategoryController extends Controller
 {
     /**
-     * @param \Topycs\Entity\CategoryInterface $category
+     * @param \Topycs\Discussions\Entity\CategoryInterface $category
      * @return \Symfony\Component\HttpFoundation\Response
      * 
      * @ParamConverter("category", class="Entity:Category")
