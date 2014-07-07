@@ -9,6 +9,6 @@
         <parameter key="topycs.controller.thread.class">Topycs\DiscussionPlatformBundle\Controller\ThreadController</parameter>
         <parameter key="topycs.controller.category.class">Topycs\DiscussionPlatformBundle\Controller\CategoryController</parameter>
         <parameter key="topycs.entity.thread.class">Topycs\Discussions\Entity\Thread</parameter>
-        <parameter key="topycs.repository.thread.class">Topycs\Discussions\Repository\ThreadRepository</parameter>
+        <parameter key="topycs.repository.thread.class">Topycs\Discussions\Repository\ThreadRepositoryInterface</parameter>
     </parameters>
 </container>

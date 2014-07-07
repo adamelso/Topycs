@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
  
-namespace Topycs\Repository;
+namespace Topycs\Discussions\Repository;
 
 use Topycs\Discussions\Entity\Collection\UserCollectionInterface;
 

@@ -5,7 +5,7 @@
         xsi:schemaLocation="http://symfony.com/schema/routing http://symfony.com/schema/routing/routing-1.0.xsd">
 
     <route id="topycs_web_category_threads" pattern="/{category}/threads">
-        <default key="_controller">topycs.controller.category:listThreads</default>
+        <default key="_controller">TopycsDiscussionPlatformBundle:Category::listThreads</default>
     </route>
 
 </routes>

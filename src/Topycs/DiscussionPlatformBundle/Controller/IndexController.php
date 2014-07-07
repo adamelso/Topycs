@@ -11,7 +11,7 @@
  
 namespace Topycs\DiscussionPlatformBundle\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Templating\EngineInterface;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 /**
  * Class IndexController
@@ -19,34 +19,21 @@ use Symfony\Bundle\FrameworkBundle\Templating\EngineInterface;
  * @author Daniel Ribeiro <drgomesp@gmail.com>
  * @package Topycs\Controller
  */
-final class IndexController
+final class IndexController extends Controller
 {
-    /**
-     * @var \Symfony\Bundle\FrameworkBundle\Templating\EngineInterface
-     */
-    protected $templating;
-
-    /**
-     * @param \Symfony\Bundle\FrameworkBundle\Templating\EngineInterface $templating
-     */
-    public function __construct(EngineInterface $templating)
-    {
-        $this->templating = $templating;
-    }
-
     /**
      * @return \Symfony\Component\HttpFoundation\Response
      */
     public function indexAction()
     {   
-        return $this->templating->renderResponse('@TopycsDiscussionPlatform/Default/index.html.twig', [
+        return $this->render('@TopycsDiscussionPlatform/Default/index.html.twig', [
             
         ]);
     }
     
     public function latestAction()
     {
-        return $this->templating->renderResponse('@TopycsDiscussionPlatform/Index/latest.html.twig', [
+        return $this->render('@TopycsDiscussionPlatform/Index/latest.html.twig', [
             
         ]);
     }

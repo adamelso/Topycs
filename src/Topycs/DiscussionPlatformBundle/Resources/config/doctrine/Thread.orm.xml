@@ -4,7 +4,7 @@
                   xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping 
                     http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
 
-    <mapped-superclass name="Topycs\Discussions\Entity\User" table="users" repository-class="Topycs\Discussions\Repository\Doctrine\ORM\UserRepository">
+    <mapped-superclass name="Topycs\Discussions\Entity\Thread" table="threads" repository-class="Topycs\Discussions\Repository\Doctrine\ORM\ThreadRepository">
         
         <id name="id" type="integer" column="id">
             <generator strategy="AUTO" />

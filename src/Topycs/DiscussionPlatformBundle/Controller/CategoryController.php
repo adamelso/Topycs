@@ -11,10 +11,8 @@
  
 namespace Topycs\Controller;
 
-use Topycs\Entity\CategoryInterface;
-use Topycs\Repository\ThreadRepositoryInterface;
-use Symfony\Bundle\FrameworkBundle\Templating\EngineInterface;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Topycs\Discussions\Entity\CategoryInterface;
 
 /**
  * Class ThreadController
@@ -22,21 +20,8 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
  * @author Daniel Ribeiro <drgomesp@gmail.com>
  * @package Topycs\Controller
  */
-final class CategoryController
+final class CategoryController extends Controller
 {
-    /**
-     * @var \Symfony\Bundle\FrameworkBundle\Templating\EngineInterface
-     */
-    protected $templating;
-
-    /**
-     * @param \Symfony\Bundle\FrameworkBundle\Templating\EngineInterface $templating
-     */
-    public function __construct(EngineInterface $templating)
-    {
-        $this->templating = $templating;
-    }
-
     /**
      * @param \Topycs\Entity\CategoryInterface $category
      * @return \Symfony\Component\HttpFoundation\Response
@@ -45,7 +30,7 @@ final class CategoryController
      */
     public function listThreads(CategoryInterface $category)
     {
-        return $this->templating->renderResponse('@TopycsWeb/Category/listThreads.html.twig', [
+        return $this->render('@TopycsWeb/Category/listThreads.html.twig', [
             'category' => $category,
         ]);
     }

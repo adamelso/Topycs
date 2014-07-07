@@ -50,9 +50,9 @@ class ThreadRepository extends EntityRepository implements ThreadRepositoryInter
     {
         $qb = parent::createQueryBuilder($alias);
         
-        $qb
-            ->addOrderBy(sprintf('%s.isPinned', $alias), 'DESC')
-            ->addOrderBy(sprintf('%s.createdAt', $alias), 'DESC');
+//        $qb
+//            ->addOrderBy(sprintf('%s.isPinned', $alias), 'DESC')
+//            ->addOrderBy(sprintf('%s.createdAt', $alias), 'DESC');
         
         return $qb; 
     }

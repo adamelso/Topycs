@@ -9,12 +9,12 @@
  * file that was distributed with this source code.
  */
  
-namespace Topycs\Repository\Doctrine\ORM;
+namespace Topycs\Discussions\Repository\Doctrine\ORM;
 
 use Doctrine\ORM\EntityRepository;
 use Topycs\Discussions\Entity\Collection\UserCollection;
 use Topycs\Discussions\Entity\UserInterface;
-use Topycs\Repository\UserRepositoryInterface;
+use Topycs\Discussions\Repository\UserRepositoryInterface;
 
 /**
  * Class ThreadRepository

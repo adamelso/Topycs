@@ -9,12 +9,10 @@
  * file that was distributed with this source code.
  */
  
-namespace Topycs\Controller;
+namespace Topycs\DiscussionPlatformBundle\Controller;
 
-use Topycs\Entity\CategoryInterface;
-use Topycs\Repository\ThreadRepositoryInterface;
-use Symfony\Bundle\FrameworkBundle\Templating\EngineInterface;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Topycs\Discussions\Entity\CategoryInterface;
 
 /**
  * Class ThreadController
@@ -22,37 +20,17 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
  * @author Daniel Ribeiro <drgomesp@gmail.com>
  * @package Topycs\Controller
  */
-final class ThreadController
+final class ThreadController extends Controller
 {
     /**
-     * @var \Symfony\Bundle\FrameworkBundle\Templating\EngineInterface
-     */
-    protected $templating;
-
-    /**
-     * @var \Topycs\Repository\ThreadRepositoryInterface
-     */
-    protected $threadRepository;
-
-    /**
-     * @param \Symfony\Bundle\FrameworkBundle\Templating\EngineInterface $templating
-     * @param \Topycs\Repository\ThreadRepositoryInterface $threadRepository
-     */
-    public function __construct(EngineInterface $templating, ThreadRepositoryInterface $threadRepository)
-    {
-        $this->templating = $templating;
-        $this->threadRepository = $threadRepository;
-    }
-
-    /**
-     * @param \Topycs\Entity\CategoryInterface $category
-     * @return \Symfony\Component\HttpFoundation\Response
+     * @param \Topycs\Discussions\Entity\CategoryInterface $category
+     * @return mixed
      */
     public function listByCategoryAction(CategoryInterface $category)
     {   
-        $threads = $this->threadRepository->findByCategory($category);
+        $threads = $this->get('topycs.repository.thread')->findByCategory($category);
         
-        return $this->templating->renderResponse('@TopycsWeb/Thread/listByCategory.html.twig', [
+        return $this->render('@TopycsDiscussionPlatform/Thread/listByCategory.html.twig', [
             'category' => $category,
             'threads' => $threads,
         ]);
@@ -63,9 +41,9 @@ final class ThreadController
      */
     public function listLatestAction()
     {
-        $threads = $this->threadRepository->findLatest();
+        $threads = $this->get('topycs.repository.thread')->findLatest();
 
-        return $this->templating->renderResponse('@TopycsWeb/Thread/listLatest.html.twig', [
+        return $this->render('@TopycsDiscussionPlatform/Thread/listLatest.html.twig', [
             'threads' => $threads,
         ]);
     }
